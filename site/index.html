@@ -1,12 +1,56 @@
 <!doctype html>
 <html>
-.mid {
+<style>
+  .mid {
   text-align:center;
   font-size: 20px;
-}
-  <body class="mid">
-    <h1>LOG IN</h1>
-    <p>Enter Username:</p>
-    <p>Enter Password:</p>
+  }
+  .design {
+    color: blueviolet;
+    font-family: sans-serif;
+  }
+  h1 {
+    color: darkblue;
+    font-family: cursive;
+  }
+
+</style>
+
+  <body class="mid design">
+    <h1>Do you think we are similar?</h1>
+    <p style="color:royalblue; font-size: 30px;">Answer the following questions to find out!</p>
+    <label for="color">Is your favourite color purple?</label>
+    <input type="checkbox" id="color"><br><br>
+
+    <label for="animal">Is your favourite animal a Quokka?</label>
+    <input type="checkbox" id="animal"><br><br>
+
+    <label for="country">Is your favourite country Japan?</label>
+    <input type="checkbox" id="country"><br><br>
+
+    <button onclick="similarityTest()">SUBMIT</button>
+
+    <script>
+      function similarityTest(){
+        let count=0;
+
+        if (document.getElementById("color").checked)
+          count++;
+        if (document.getElementById("animal").checked)
+          count++;
+        if (document.getElementById("country").checked)
+          count++
+
+        if (count==3)
+          alert("We are twins bruh!");
+        else if (count==2)
+          alert("You have potential:)");
+        else if (count==1)
+          alert("I guess this one match is a coincidence honestly:/");
+        else
+          alert("Ummm...yeah no");
+      }
+    </script>
+
   </body>
 </html>
