@@ -17,38 +17,25 @@
 </style>
 
   <body class="mid design">
-    <h1>Do you think we are similar?</h1>
-    <p style="color:royalblue; font-size: 30px;">Answer the following questions to find out!</p>
-    <label for="color">Is your favourite color purple?</label>
-    <input type="checkbox" id="color"><br><br>
+    <h1>Enter your favourites</h1>
+    <label for="color">Your favourite color:</label>
+    <input type="text" id="color"><br><br>
 
-    <label for="animal">Is your favourite animal a Quokka?</label>
-    <input type="checkbox" id="animal"><br><br>
+    <label for="animal">Your favourite animal:</label>
+    <input type="text" id="animal"><br><br>
 
-    <label for="country">Is your favourite country Japan?</label>
-    <input type="checkbox" id="country"><br><br>
+    <label for="country">Your favourite country:</label>
+    <input type="text" id="country"><br><br>
 
-    <button onclick="similarityTest()">SUBMIT</button>
+    <button onclick="favs()">SUBMIT</button>
 
     <script>
-      function similarityTest(){
-        let count=0;
+      function favs(){
+        var color = document.getElementById("color").value;
+        var animal = document.getElementById("animal").value;
+        var country = document.getElementById("country").value;
 
-        if (document.getElementById("color").checked)
-          count++;
-        if (document.getElementById("animal").checked)
-          count++;
-        if (document.getElementById("country").checked)
-          count++
-
-        if (count==3)
-          alert("We are twins bruh!");
-        else if (count==2)
-          alert("You have potential:)");
-        else if (count==1)
-          alert("I guess this one match is a coincidence honestly:/");
-        else
-          alert("Ummm...yeah no");
+        alert("Your favourite color is "+color+" , animal is "+animal+" and country is "+country+".");
       }
     </script>
 
